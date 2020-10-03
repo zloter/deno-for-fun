@@ -3,6 +3,5 @@ version: '3'
 services:
   web:
     build: .
-    container_name: deno-deploy
     ports:
-      - "8000:8000"
+      - "${WEBSITE_PORT}:${WEBSITE_PORT}"

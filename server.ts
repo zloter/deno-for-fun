@@ -1,4 +1,6 @@
 import { Application, Router } from "https://deno.land/x/oak@v6.3.0/mod.ts";
+import { config } from "https://deno.land/x/dotenv/mod.ts";
+const WEBSITE_PORT: number = +config().WEBSITE_PORT;
 
 interface BookInterface {
     id: number;
@@ -59,4 +61,4 @@ const app = new Application();
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-await app.listen({ port: 8000 });
+await app.listen({ port: WEBSITE_PORT });
